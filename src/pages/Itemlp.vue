@@ -1,0 +1,30 @@
+<template>
+  <q-page>
+    <div class="row">
+      <q-tabs class="bg-primary text-white shadow-2">
+        <q-route-tab
+          icon="fast_rewind"
+          to="/listlp"
+          exact
+        />
+        <q-route-tab
+          icon="dashboard"
+          label="Ubersicht"
+          to="/itemlp/ubersicht"
+          exact
+        />
+        <q-route-tab
+          label="Antrage"
+          to="/itemlp/antrage"
+          exact
+        />
+        <q-route-tab
+          label="Vortrage"
+          to="/itemlp/vortrage"
+          exact
+        />
+      </q-tabs>
+    </div>
+    <router-view/>
+  </q-page>
+</template>

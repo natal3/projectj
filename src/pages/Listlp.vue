@@ -22,7 +22,7 @@
     <td>Michael Müller</td>
     <td>§2 BetrKV</td>
     <td>In Bearbeitung</td>
-    <td><q-btn class="obutton" color="secondary" label="Öffnen"/></td>
+    <td><q-btn @click="openItem()" class="obutton" color="secondary" label="Öffnen"/></td>
 </tr>
 <tr>
     <td>Anna Musterfrau</td>
@@ -82,6 +82,11 @@ q-btn{
 
 <script>
 export default {
-  name: 'Listlp'
+  name: 'Listlp',
+  methods: {
+    openItem () {
+      this.$router.push('/itemlp/ubersicht')
+    }
+  }
 }
 </script>

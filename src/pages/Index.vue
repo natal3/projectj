@@ -2,7 +2,7 @@
   <q-page class="flex flex-center">
     <div class="q-pa-md">
       <div class="q-gutter-md" style="max-width: 300px">
-        <img src="~assets/watson3.png" width='250px'>
+        <img src="~assets/watson3.png" style="width:100%">
         <q-input
           v-model="username"
           filled
@@ -24,13 +24,15 @@
             />
           </template>
         </q-input>
-        <q-btn
-          color="primary"
-          class="full-width q-mt-md"
-          label="Login"
-          icon-right="send"
-          @click="login()"
-        />
+        <div>
+          <q-btn
+            color="primary"
+            class="full-width"
+            label="Login"
+            icon-right="send"
+            @click="login()"
+          />
+        </div>
       </div>
     </div>
   </q-page>
@@ -51,7 +53,7 @@ export default {
   methods: {
     login () {
       if (this.username === 'richter' && this.password === 'watson123') {
-        alert('loggedin')
+        this.$router.push('/listlp')
       } else {
         alert('Invalid username or password')
       }
