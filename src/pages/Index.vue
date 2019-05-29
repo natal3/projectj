@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     login () {
-      if (this.username === 'natal' && this.password === '123') {
+      if (this.username === 'richter' && this.password === 'watson123') {
         alert('loggedin')
       } else {
         alert('Invalid username or password')
