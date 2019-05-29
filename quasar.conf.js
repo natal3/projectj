@@ -22,36 +22,49 @@ module.exports = function (ctx) {
       // 'eva-icons'
     ],
 
+    // framework: {
+    //   // all: true, // --- includes everything; for dev only!
+
+    //   components: [
+    //     'QLayout',
+    //     'QHeader',
+    //     'QDrawer',
+    //     'QPageContainer',
+    //     'QPage',
+    //     'QToolbar',
+    //     'QToolbarTitle',
+    //     'QBtn',
+    //     'QIcon',
+    //     'QList',
+    //     'QItem',
+    //     'QItemSection',
+    //     'QItemLabel',
+    //     'QLayoutHeader',
+    //     'QLayoutDrawer',
+    //     'QListHeader',
+    //     'QItemMain',
+    //     'QItemSide',
+    //     'QItemSeparator',
+    //     'QItemTile',
+    //     'QLayoutFooter',
+    //     'QPageSticky',
+    //     'QInput'
+    //   ],
+
+    //   directives: [
+    //     'Ripple'
+    //   ],
+
+    //   // Quasar plugins
+    //   plugins: [
+    //     'Notify'
+    //   ]
+
+    //   // iconSet: 'ionicons-v4'
+    //   // lang: 'de' // Quasar language
+    // },
     framework: {
-      // all: true, // --- includes everything; for dev only!
-
-      components: [
-        'QLayout',
-        'QHeader',
-        'QDrawer',
-        'QPageContainer',
-        'QPage',
-        'QToolbar',
-        'QToolbarTitle',
-        'QBtn',
-        'QIcon',
-        'QList',
-        'QItem',
-        'QItemSection',
-        'QItemLabel'
-      ],
-
-      directives: [
-        'Ripple'
-      ],
-
-      // Quasar plugins
-      plugins: [
-        'Notify'
-      ]
-
-      // iconSet: 'ionicons-v4'
-      // lang: 'de' // Quasar language
+      all: true
     },
 
     supportIE: false,
