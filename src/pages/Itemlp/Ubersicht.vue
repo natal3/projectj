@@ -1,9 +1,5 @@
 <template>
   <q-page padding>
-    <!-- First line -->
-    <div class="row">
-      <h6>Übersichtsblatt</h6>
-    </div>
 
     <!-- Second line -->
     <div class="row">
@@ -62,8 +58,8 @@
             <td>Mietvertrag</td>
             <td>15.05.19 11:23</td>
             <td>
-              <q-btn icon="img:statics/show.jpg"/>
-              <q-btn icon="img:statics/delete.jpg"/>
+              <q-btn icon="search"/>
+              <q-btn icon="delete_outline"/>
             </td>
           </tr>
         </table>
@@ -89,8 +85,8 @@
             <td>Mietvertrag</td>
             <td>15.05.19 11:23</td>
             <td>
-              <q-btn icon="img:statics/show.jpg"/>
-              <q-btn icon="img:statics/delete.jpg"/>
+              <q-btn icon="search"/>
+              <q-btn icon="delete_outline"/>
             </td>
           </tr>
         </table>

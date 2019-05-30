@@ -12,44 +12,47 @@ const routes = [
         }
       }, {
         path: 'listlp',
-        component: () => import('pages/Listlp.vue')
+        component: () => import('pages/Listlp.vue'),
+        meta: {
+          subtitle: 'Verfahren auswählen'
+        }
       }, {
         path: 'itemlp',
         component: () => import('pages/Itemlp.vue'),
         children: [
           {
             path: 'ubersicht',
-            component: () => import('pages/Ubersicht.vue'),
+            component: () => import('pages/Itemlp/Ubersicht.vue'),
             meta: {
               subtitle: 'Übersichtsblatt'
             }
           }, {
             path: 'antrage',
-            component: () => import('pages/Antrage.vue'),
+            component: () => import('pages/Itemlp/Antrage.vue'),
             meta: {
               subtitle: 'Gegenüberstellung der Anträge'
             }
           }, {
             path: 'vortrage',
-            component: () => import('pages/Vortrage.vue'),
+            component: () => import('pages/Itemlp/Vortrage.vue'),
             meta: {
               subtitle: 'Gegenüberstellung der Vorträge'
             }
           }, {
             path: 'prufungattribute',
-            component: () => import('pages/PrufungAttribute.vue'),
+            component: () => import('pages/Itemlp/PrufungAttribute.vue'),
             meta: {
               subtitle: 'Prüfung der Attribute'
             }
           }, {
             path: 'mundlicheverhandlung',
-            component: () => import('pages/MundlicheVerhandlung.vue'),
+            component: () => import('pages/Itemlp/MundlicheVerhandlung.vue'),
             meta: {
               subtitle: 'Mündliche Verhandlung'
             }
           }, {
             path: 'rechtlwurdigung',
-            component: () => import('pages/RechtlWurdigung.vue'),
+            component: () => import('pages/Itemlp/RechtlWurdigung.vue'),
             meta: {
               subtitle: 'Erstellen der rechtlichen Würdigung'
             }

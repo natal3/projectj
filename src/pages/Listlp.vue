@@ -1,90 +1,90 @@
 <template>
   <q-page padding>
-    <!-- First line -->
-    <div class="rown">
-    <h6>Verfahren auswählen</h6>
-    </div>
+    <q-btn icon="add" color="primary" label="Neues Verfahren" class="q-mb-lg"/>
 
-    <!-- Second line -->
-    <div class="rown">
-    <q-btn class="nfbutton" color="primary" label="Neues Verfahren"/>
-    </div>
-<table>
-<tr>
-    <th>Kläger</th>
-    <th>Beklagter</th>
-    <th>Streitsache</th>
-    <th>Status</th>
-    <th>Aktion</th>
-</tr>
-<tr>
-    <td>Immohigh GmbH</td>
-    <td>Michael Müller</td>
-    <td>§2 BetrKV</td>
-    <td>In Bearbeitung</td>
-    <td><q-btn @click="openItem()" class="obutton" color="secondary" label="Öffnen"/></td>
-</tr>
-<tr>
-    <td>Anna Musterfrau</td>
-    <td>Land & Stadt AG</td>
-    <td>§2 BetrKV</td>
-    <td>Abgeschlossen</td>
-    <td><q-btn class="obutton" color="secondary" label="Öffnen"/></td>
-</tr>
-<tr>
-    <td>Otto Mustermann</td>
-    <td>Sebastian Schmitt</td>
-    <td>§2 BetrKV</td>
-    <td>Neu</td>
-    <td><q-btn class="obutton" color="secondary" label="Öffnen"/></td>
-</tr>
-</table>
-    </q-page>
+    <q-table
+      :data="data"
+      :columns="columns"
+      row-key="name"
+      :loading="loading"
+    >
+      <q-tr :id="props.row.id" slot="body" slot-scope="props" :props="props">
+        <q-td
+          v-for="col in props.cols"
+          :key="col.name"
+          :props="props"
+        >
+          {{ col.value }}
+          <q-btn color="primary" v-if="col.name=='aktion'" @click.native="rowClick(props.row)">Öffnen</q-btn>
+        </q-td>
+      </q-tr>
+    </q-table>
+  </q-page>
 </template>
-
-<style>
-table {
-    width: 80%;
-    margin: 20px;
-    padding: 5px;
-}
-table,th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-q-btn{
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-.rown{
-  margin: 20px;
-  padding: 5px;
-}
-
-.nfbutton{
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 150px;
-}
-
-.obutton{
-  padding: 14px 20px;
-  margin: 8px 0;
-  width: 100%;
-}
-
-</style>
 
 <script>
 export default {
   name: 'Listlp',
+  data () {
+    return {
+      loading: true,
+      columns: [
+        {
+          name: 'aktenzeichen',
+          required: true,
+          label: 'Aktenzeichen',
+          align: 'left',
+          field: row => row.aktenzeichen,
+          format: val => `${val}`,
+          sortable: true
+        },
+        { name: 'klager', align: 'center', label: 'Klägerin', field: 'klager', sortable: true },
+        { name: 'beklagter', align: 'center', label: 'Beklagte', field: 'beklagter', sortable: true },
+        { name: 'wegen', label: 'Wegen', field: 'wegen', sortable: true },
+        { name: 'status', label: 'Status', field: 'status' },
+        { name: 'aktion', label: 'Aktion', field: 'aktion' }
+      ],
+      data: [
+        {
+          name: '1',
+          aktenzeichen: 'C-2019-1578',
+          klager: 'Immohigh GmbH',
+          beklagter: 'Michael Müller',
+          wegen: '§2 BetrKV',
+          status: 'In Bearbeitung',
+          aktion: ''
+        }, {
+          name: '2',
+          aktenzeichen: 'C-2019-3547',
+          klager: 'Anna Musterfrau',
+          beklagter: 'Land & Stadt AG',
+          wegen: '§2 BetrKV',
+          status: 'Abgeschlossen',
+          aktion: ''
+        }, {
+          name: '3',
+          aktenzeichen: 'C-2019-2201',
+          klager: 'Otto Mustermann',
+          beklagter: 'Sebastian Schmitt',
+          wegen: '§2 BetrKV',
+          status: 'Neu',
+          aktion: ''
+        }
+      ]
+    }
+  },
   methods: {
     openItem () {
+      this.$router.push('/itemlp/ubersicht')
+    },
+    onRefresh () {
+      this.loading = true
+      setTimeout(() => {
+        this.loading = false
+      }, 5000)
+    },
+    rowClick (item) {
+      console.log(item)
       this.$router.push('/itemlp/ubersicht')
     }
   }
