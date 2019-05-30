@@ -6,7 +6,7 @@
           flat
           dense
           round
-          @click="leftDrawerOpen = !leftDrawerOpen"
+          @click="toggleMenu()"
           aria-label="Menu"
         >
           <q-icon name="menu" />
@@ -14,10 +14,11 @@
 
         <q-toolbar-title>
           Justiz Memoria
-        <div slot="subtitle">IBM Watson Demo</div>
+          <q-badge>{{ this.$route.meta.subtitle }}</q-badge>
         </q-toolbar-title>
 
-        <div>IBM Watson Demo</div>
+        <div>{{ this.$route.meta.desc }}</div>
+        <q-btn stretch flat label="Abmelden" v-if="!this.$route.meta.desc" icon-right="logout" @click="logout()"/>
       </q-toolbar>
     </q-header>
 
@@ -53,12 +54,19 @@ export default {
   name: 'MyLayout',
   data () {
     return {
-      leftDrawerOpen: false
+      leftDrawerOpen: false,
+      description: 'IBM Watson Demo'
       // leftDrawerOpen: this.$q.platform.is.desktop
     }
   },
   methods: {
-    openURL
+    openURL,
+    toggleMenu () {
+      // this.leftDrawerOpen = !this.leftDrawerOpen
+    },
+    logout () {
+      this.$router.push('/')
+    }
   }
 }
 </script>
