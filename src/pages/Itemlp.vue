@@ -8,42 +8,42 @@
         />
         <q-route-tab
           icon="apps"
-          label="Ubersicht"
+          label="Übersicht"
           to="/itemlp/ubersicht"
           en="Overview"
           exact
         />
         <q-route-tab
           icon="vertical_align_bottom"
-          label="Antrage"
+          label="Anträge"
           to="/itemlp/antrage"
           en="Requests"
           exact
         />
         <q-route-tab
           icon="school"
-          label="Vortrage"
+          label="Vorträge"
           to="/itemlp/vortrage"
           en="Pleadings"
           exact
         />
         <q-route-tab
           icon="edit_attributes"
-          label="Prufung Attribute"
+          label="Prüfung Attribute"
           to="/itemlp/prufungattribute"
           en="Check Attribute"
           exact
         />
         <q-route-tab
           icon="hearing"
-          label="Mundliche Verhandlung"
+          label="Mündliche Verhandlung"
           to="/itemlp/mundlicheverhandlung"
           en="Oral Hearing"
           exact
         />
         <q-route-tab
           icon="gavel"
-          label="Rechtl. Wurdigung"
+          label="Rechtl. Würdigung"
           to="/itemlp/rechtlwurdigung"
           en="Legal Assessment"
           exact

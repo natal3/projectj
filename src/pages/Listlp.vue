@@ -41,7 +41,7 @@ export default {
         { name: 'klager', align: 'center', label: 'Klägerin', field: 'klager', sortable: true },
         { name: 'beklagter', align: 'center', label: 'Beklagte', field: 'beklagter', sortable: true },
         { name: 'wegen', label: 'Wegen', field: 'wegen', sortable: true },
-        { name: 'status', label: 'Status', field: 'status' },
+        { name: 'status', label: 'Status', field: 'status', sortable: true },
         { name: 'aktion', label: 'Aktion', field: 'aktion' }
       ],
       data: [
